@@ -10,20 +10,36 @@
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./icon-192.png">
 <title>工廠照片浮水印</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0f1117;--bg2:#181c27;--bg3:#1e2334;
-  --border:#2a3050;--border2:#3a4570;
-  --accent:#4f8ef7;--accent2:#2563eb;
-  --green:#22c55e;--green2:#16a34a;
-  --amber:#f59e0b;--purple:#a78bfa;--red:#ef4444;
-  --text:#e8ecf4;--text2:#8892aa;--text3:#5a6480;
-  --mono:'JetBrains Mono',monospace;
-  --sans:'Noto Sans TC',sans-serif;
-  --r:10px;--rl:14px;
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-}
-*</style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans TC',sans-serif;background:#0f1117;color:#e8ecf4;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.card{background:#1e2334;border:1px solid #2a3050;border-radius:16px;padding:32px;max-width:400px;width:100%;text-align:center}
+.icon{width:60px;height:60px;background:#4f8ef7;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px}
+h1{font-size:20px;font-weight:700;margin-bottom:8px}
+p{font-size:13px;color:#8892aa;line-height:1.6;margin-bottom:20px}
+.steps{text-align:left;background:#0f1117;border-radius:10px;padding:16px;margin-bottom:20px}
+.step{font-size:13px;color:#8892aa;padding:6px 0;border-bottom:1px solid #2a3050;display:flex;gap:10px}
+.step:last-child{border:none}
+.step-num{color:#4f8ef7;font-weight:700;flex-shrink:0}
+.url{background:#0f1117;border:1px solid #3a4570;border-radius:8px;padding:10px 14px;font-family:monospace;font-size:13px;color:#4f8ef7;word-break:break-all;margin-bottom:16px}
+.note{font-size:11px;color:#5a6480}
+</style>
 </head>
-<body><h1>淥丽剩时涻殢</h1><p>正观工廠强色: <strong>https://jeffreychen78617-rgb.github.io/factory-watermark</strong></p></body></html>
+<body>
+<div class="card">
+  <div class="icon">📷</div>
+  <h1>工廠照片浮水印工具</h1>
+  <p>PWA 手機 App 正在建置中，請稍後再試，或使用電腦版工具。</p>
+  <div class="steps">
+    <div class="step"><span class="step-num">1</span><span>用手機 Chrome 或 Safari 開啟此網址</span></div>
+    <div class="step"><span class="step-num">2</span><span>點瀏覽器「加到主畫面」</span></div>
+    <div class="step"><span class="step-num">3</span><span>從主畫面開啟，即可拍照+浮水印</span></div>
+  </div>
+  <div class="url">https://jeffreychen78617-rgb.github.io/factory-watermark</div>
+  <div class="note">完整功能版本即將更新 · v3 PWA</div>
+</div>
+<script>
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
